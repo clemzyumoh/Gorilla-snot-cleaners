@@ -1,19 +1,3 @@
-// export const metadata = { title: "About | Gorilla Snot Cleaners" };
-
-// export default function AboutPage() {
-//   return (
-//     <div className="mx-auto max-w-2xl px-5 py-16">
-//       <h1 className="font-display text-3xl font-800 text-plum">
-//         We Don&apos;t Do Boring Parties
-//       </h1>
-//       <p className="mt-4 text-plum/70">
-//         Gorilla Snot Cleaners is a party supply brand built for people who go
-//         all out. From hats to plates to napkins, we supply the energy — you
-//         supply the guest list.
-//       </p>
-//     </div>
-//   );
-// }
 
 import Link from "next/link";
 import FadeInSection from "@/components/FadeInSection";
