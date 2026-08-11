@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #FFF8ED;
+  color: #3D1F47;
+}
+
+.hoverEffect {
+  transition: all 0.2s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
