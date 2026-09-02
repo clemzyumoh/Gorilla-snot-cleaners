@@ -15,7 +15,7 @@ import {
 export default function Footer() {
   return (
     <footer className="border-t border-plum/10 text-center bg-plum text-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 lg:grid-cols-3">
         {/* Brand — logo + about */}
         <div>
           <Link href="/" className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Social */}
-        <div className="flex justify-start items-center flex-col"> 
+        <div className="flex justify-start items-center flex-col">
           <h4 className="font-display font-700">Follow</h4>
           <div className="mt-3 flex gap-4 text-center text-xl text-cream/70">
             <a href="#" aria-label="Instagram" className="hover:text-sunshine">
@@ -89,6 +89,26 @@ export default function Footer() {
               <FaFacebookF />
             </a>
           </div>
+        </div>
+        <div>
+          <h4 className="font-display font-700">Legal</h4>
+          <ul className="mt-3 space-y-2 text-sm text-cream/70">
+            <li>
+              <Link href="/privacy-policy" className="hover:text-sunshine">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms-of-service" className="hover:text-sunshine">
+                Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link href="/refund-policy" className="hover:text-sunshine">
+                Shipping & Refunds
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 

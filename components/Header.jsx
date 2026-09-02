@@ -35,6 +35,8 @@ export default function Header() {
   const totalFavorites = useFavoritesStore((s) => s.items.length);
 
 
+  const profile = useAuthStore((s) => s.profile);
+
 const results =
   query.trim().length > 0
     ? searchIndex
@@ -142,11 +144,23 @@ const results =
             className="text-plum hoverEffect hover:text-coral">
             <GiRoyalLove className="text-2xl" />
           </Link> */}
-          <Link
+          {/* <Link
             href={user ? "/account" : "/login"}
             aria-label="Account"
             className="text-plum hoverEffect hover:text-coral">
             <VscAccount className="text-2xl" />
+          </Link> */}
+          <Link
+            href={user ? "/account" : "/login"}
+            aria-label="Account"
+            className="text-plum hoverEffect hover:text-coral">
+            {user ? (
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-coral text-sm font-700 text-white">
+                {(profile?.full_name?.[0] || user.email[0]).toUpperCase()}
+              </div>
+            ) : (
+              <VscAccount className="text-2xl" />
+            )}
           </Link>
           <Link
             href="/cart"
@@ -226,9 +240,8 @@ const results =
         </Link>
       </div>
 
-      
       {mobileSearchOpen && (
-        <div className="relative border-t border-plum/10 bg-cream px-5 text-center  py-3 md:hidde">
+        <div className="relative border-t border-plum/10 bg-cream px-5  text-center py-3 ">
           <input
             autoFocus
             value={query}
@@ -237,7 +250,10 @@ const results =
             className="w-[80vw] lg:w-[60vw] rounded-full border border-plum/20 bg-white px-4 py-2 text-sm outline-none focus:border-coral"
           />
           {results.length > 0 && (
-            <div className="absolute lg:w-[60vw] md:w-[80vw] w-[90vw] left-  lg:left-72 md:left-20 top-full z-50 mt-2 rounded-xl border border-plum/10 bg-white shadow-lg">
+            <div
+             className="absolute lg:w-[60vw] md:w-[80vw] w-[90vw] left-  lg:left-72 md:left-20 top-full z-50 mt-2 rounded-xl border border-plum/10 bg-white shadow-lg"
+              //className="absolute inset-x-5 top-full z-50 mt-2 rounded-xl border border-plum/10 bg-white shadow-lg"
+              >
               {results.map((r) => (
                 <Link
                   key={r._id}
@@ -254,8 +270,12 @@ const results =
                   />
                   <div className="text-left w-[50vw]">
                     <h3 className="font-bold">{r.name}</h3>
-                    <p className="text-xs hidden md:flex text-plum/70">{r.description}</p>
-                    <p className="text-xs md:hidden text-plum/70">{r.description.slice(0, 50)}....</p>
+                    <p className="text-xs hidden md:flex text-plum/70">
+                      {r.description}
+                    </p>
+                    <p className="text-xs md:hidden text-plum/70">
+                      {r.description.slice(0, 50)}....
+                    </p>
                     <p className="text-sm text-coral">Price:{r.price}</p>
                   </div>
                 </Link>
@@ -334,6 +354,18 @@ const results =
               onClick={() => setMenuOpen(false)}
               className="rounded-lg px-2 py-3 font-display text-plum hoverEffect hover:bg-cream hover:text-coral">
               {user ? "My Account" : "Sign In"}
+            </Link>
+            <Link
+              href={user ? "/account" : "/login"}
+              aria-label="Account"
+              className="text-plum hoverEffect hover:text-coral">
+              {user ? (
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-coral text-sm font-700 text-white">
+                  {(profile?.full_name?.[0] || user.email[0]).toUpperCase()}
+                </div>
+              ) : (
+                <VscAccount className="text-2xl" />
+              )}
             </Link>
             <div className="flex w-full justify-center items-center">
               <Image
