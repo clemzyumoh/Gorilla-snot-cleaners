@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gorilla-snot-cleaners.vercel.app/sitemap.xml

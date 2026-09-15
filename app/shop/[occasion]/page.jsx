@@ -25,7 +25,7 @@ export default function OccasionShopPage({ params }) {
           No products tagged for this occasion yet — check back soon.
         </p>
       ) : (
-        <div className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-4">
           {items.map((p) => (
             <ProductCard key={p._id} product={p} />
           ))}
