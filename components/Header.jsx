@@ -355,7 +355,7 @@ const results =
               className="rounded-lg px-2 py-3 font-display text-plum hoverEffect hover:bg-cream hover:text-coral">
               {user ? "My Account" : "Sign In"}
             </Link>
-            <Link
+            {/* <Link
               href={user ? "/account" : "/login"}
               aria-label="Account"
               className="text-plum hoverEffect hover:text-coral">
@@ -366,7 +366,7 @@ const results =
               ) : (
                 <VscAccount className="text-2xl" />
               )}
-            </Link>
+            </Link> */}
             <div className="flex w-full justify-center items-center">
               <Image
                 src="/products/gsc.png"
